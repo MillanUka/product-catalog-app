@@ -1,7 +1,13 @@
 (ns product-catalog-app.core
-  (:gen-class))
+  (:use ring.adapter.jetty))
+
+(defn handler [request]
+  {:status 200
+   :headers {"Content-Type" "text/plain"}
+   :body "Hello world"})
 
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  (println "Hello, World!"))
+  (run-jetty handler {:port 3000})
+)
