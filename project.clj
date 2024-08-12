@@ -7,7 +7,8 @@
                  [org.clojure/java.jdbc "0.7.12"]
                  [org.xerial/sqlite-jdbc "3.46.0.1"]
                  [ring/ring-core "1.12.2"]
-                 [ring/ring-jetty-adapter "1.12.2"]]
+                 [ring/ring-jetty-adapter "1.12.2"]
+                 [clj-http "3.13.0"]]
   :main ^:skip-aot product-catalog-app.core
   :target-path "target/%s"
   :profiles {:uberjar {:aot :all
