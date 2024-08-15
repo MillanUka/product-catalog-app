@@ -1,13 +1,11 @@
 (ns product-catalog-app.core
-  (:use ring.adapter.jetty))
+  (:require [ring.adapter.jetty :as jetty]
+            [product-catalog-app.stripe :as stripe]))
 
 (defn handler [request]
-  {:status 200
-   :headers {"Content-Type" "text/plain"}
-   :body "Hello world"})
+  (stripe/create-stripe-session "" "" 1))
 
 (defn -main
   "I don't do a whole lot ... yet."
   [& args]
-  (run-jetty handler {:port 3000})
-)
+  (jetty/run-jetty handler {:port 3000}))
